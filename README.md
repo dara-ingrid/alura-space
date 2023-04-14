@@ -14,35 +14,30 @@ Aluraspace é um projeto de um CRUD de fotografias do espaço desenvolvido com P
 1. Clone o repositório:
 
 ```
-bashCopy code
 git clone https://github.com/seu-usuario/aluraspace.git
 ```
 
 1. Crie um ambiente virtual:
 
 ```
-bashCopy code
 python3 -m venv env
 ```
 
 1. Ative o ambiente virtual:
 
 ```
-bashCopy code
 source env/bin/activate
 ```
 
 1. Instale as dependências:
 
 ```
-Copy code
 pip install -r requirements.txt
 ```
 
 1. Crie um arquivo `.env` na raiz do projeto com as variáveis de ambiente necessárias:
 
 ```
-Copy code
 SECRET_KEY=chave_secreta_do_django
 DEBUG=True
 AWS_ACCESS_KEY_ID=<sua-access-key-id>
@@ -56,7 +51,6 @@ Você pode gerar uma nova chave secreta do Django executando o script `secret_ke
 1. Execute o script `secret_key_generator.py`:
 
 ```
-Copy code
 python secret_key_generator.py
 ```
 
@@ -64,14 +58,12 @@ python secret_key_generator.py
 2. Execute as migrações do banco de dados:
 
 ```
-Copy code
 python manage.py migrate
 ```
 
 1. Inicie o servidor:
 
 ```
-Copy code
 python manage.py runserver
 ```
 
