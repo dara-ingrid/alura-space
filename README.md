@@ -1,6 +1,3 @@
-# alura-space
-Projeto desenvolvido em Python e Django baseado no projeto alura-space com apps adicionais
-
 # Alura Space - CRUD de Fotografias de Galáxias com Django
 
 Este é um projeto desenvolvido dem Python e Django, que consiste em um CRUD (Create, Read, Update, Delete) para fotografias de galáxias. As imagens são persistidas na Amazon S3.
