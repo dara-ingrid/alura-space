@@ -1,72 +1,92 @@
-# Alura Space - CRUD de Fotografias de Galáxias com Django
+# Aluraspace
 
-Este é um projeto desenvolvido dem Python e Django, que consiste em um CRUD (Create, Read, Update, Delete) para fotografias de galáxias. As imagens são persistidas na Amazon S3.
+Aluraspace é um projeto de um CRUD de fotografias do espaço desenvolvido com Python e Django, onde as imagens são persistidas no AWS S3. Este projeto é resultado do curso "Desenvolvimento Python com Django" da Alura.
 
-## Tecnologias utilizadas
+## Requisitos
 
-- Python
-- Django
-- HTML5
-- CSS3
-- Amazon S3
+- Python 3.x
+- Django 3.x
+- Django Storages
+- Boto3
 
-## Executando o projeto
-
-Para executar o projeto localmente, é necessário ter o Python e o Django instalados em seu computador, bem como uma conta na Amazon Web Services com acesso ao serviço S3.
+## Como executar o projeto
 
 1. Clone o repositório:
 
 ```
-git clone https://github.com/dara-ingrid/alura-space.git
+bashCopy code
+git clone https://github.com/seu-usuario/aluraspace.git
 ```
 
-1. Acesse o diretório do projeto:
+1. Crie um ambiente virtual:
 
 ```
-cd alura-space
+bashCopy code
+python3 -m venv env
 ```
 
-1. Crie um ambiente virtual e instale as dependências:
+1. Ative o ambiente virtual:
 
 ```
-python -m venv venv
-source venv/bin/activate
+bashCopy code
+source env/bin/activate
+```
+
+1. Instale as dependências:
+
+```
+Copy code
 pip install -r requirements.txt
 ```
 
-1. Configure as variáveis de ambiente para acesso à S3:
+1. Crie um arquivo `.env` na raiz do projeto com as variáveis de ambiente necessárias:
 
 ```
-export AWS_ACCESS_KEY_ID=<sua_access_key_id>
-export AWS_SECRET_ACCESS_KEY=<sua_secret_access_key>
-export AWS_STORAGE_BUCKET_NAME=<seu_bucket_name>
+Copy code
+SECRET_KEY=chave_secreta_do_django
+DEBUG=True
+AWS_ACCESS_KEY_ID=<sua-access-key-id>
+AWS_SECRET_ACCESS_KEY=<sua-secret-access-key>
+AWS_STORAGE_BUCKET_NAME=<nome-do-seu-bucket>
+AWS_S3_REGION_NAME=<região-do-seu-bucket>
 ```
 
-1. Execute as migrações do banco de dados:
+Você pode gerar uma nova chave secreta do Django executando o script `secret_key_generator.py`. Para isso, siga os passos abaixo:
+
+1. Execute o script `secret_key_generator.py`:
 
 ```
+Copy code
+python secret_key_generator.py
+```
+
+1. Copie a chave gerada e adicione ao arquivo `.env` como o valor da variável `SECRET_KEY`.
+2. Execute as migrações do banco de dados:
+
+```
+Copy code
 python manage.py migrate
 ```
 
 1. Inicie o servidor:
 
 ```
+Copy code
 python manage.py runserver
 ```
 
-1. Acesse o site em seu navegador:
+1. Acesse o projeto em `http://localhost:8000/`
 
-```
-http://localhost:8000
-```
+## Como contribuir
 
-## Como utilizar o CRUD
+1. Faça um fork do projeto
+2. Crie uma branch para a sua feature: `git checkout -b minha-feature`
+3. Faça suas alterações e adicione os arquivos modificados: `git add .`
+4. Faça um commit com as suas alterações: `git commit -m "Minha feature"`
+5. Envie suas alterações para o seu repositório no Github: `git push origin minha-feature`
+6. Abra um Pull Request no repositório original
 
-O CRUD é composto por quatro operações básicas:
-
-- Criação de uma nova fotografia de galáxia
-- Listagem das fotografia de galáxias cadastradas
-- Atualização de uma fotografia de galáxia existente
-- Exclusão de uma fotografia de galáxia existente
-
-Para acessar as funcionalidades do CRUD, acesse a página principal do site e utilize o menu de navegação.
+<h3 align="center">
+Feito com ❤️ por <a href="https://www.linkedin.com/in/dara-ingrid/">Dara Ingrid</a>
+</a>
+</h3>
